@@ -1,0 +1,89 @@
+from pyhive import hive
+import pandas as pd
+
+# Hive connection parameters
+hive_host = 'your_hive_server_host'
+hive_port = 10000  # Default Hive port
+hive_username = 'your_username'
+hive_password = 'your_password'
+hive_database = 'your_database_name'
+input_table = 'your_input_table'
+output_table = 'your_output_table'
+
+# Establish connection
+connection = hive.connect(
+    host=hive_host,
+    port=hive_port,
+    username=hive_username,
+    password=hive_password,
+    database=hive_database,
+    auth='CUSTOM',  # Or 'NOSASL' for no authentication
+    configuration={
+        'mapred.job.queue.name': 'your_queue_name',  # Optional: specify your MapReduce queue
+    }
+)
+
+# Query to select all data from the input table
+query = f'SELECT * FROM {input_table}'
+
+# Create a Pandas DataFrame from the query result
+df = pd.read_sql(query, connection)
+
+# Process the DataFrame as needed (modify data, perform analysis, etc.)
+# For example, add a new column
+df['new_column'] = df['existing_column'] * 2
+
+# Convert the modified DataFrame back to a Hive table
+df.to_sql(output_table, connection, index=False, if_exists='replace')
+
+# Close the connection
+connection.close()
+
+
+
+
+
+
+from pyhive import hive
+import pandas as pd
+
+# Hive connection parameters
+hive_host = 'your_hive_server_host'
+hive_port = 10000  # Default Hive port
+hive_username = 'your_username'
+hive_password = 'your_password'
+hive_database = 'your_database_name'
+table1_name = 'table1'
+table2_name = 'table2'
+
+# Establish connection
+connection = hive.connect(
+    host=hive_host,
+    port=hive_port,
+    username=hive_username,
+    password=hive_password,
+    database=hive_database,
+    auth='CUSTOM',  # Or 'NOSASL' for no authentication
+    configuration={
+        'mapred.job.queue.name': 'your_queue_name',  # Optional: specify your MapReduce queue
+    }
+)
+
+# Query to select all data from the first table
+query_table1 = f'SELECT * FROM {table1_name}'
+query_table2 = f'SELECT * FROM {table2_name}'
+
+# Create Pandas DataFrames from the query results
+df_table1 = pd.read_sql(query_table1, connection)
+df_table2 = pd.read_sql(query_table2, connection)
+
+# Close the connection
+connection.close()
+
+# Perform an inner join on the 'ID' column
+df_joined = pd.merge(df_table1, df_table2, on='ID', how='inner')
+
+# Print or further process the joined DataFrame
+print(df_joined)
+
+
