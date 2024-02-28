@@ -1,0 +1,632 @@
+Following is not easy
+To follow we need to ...
+It is easy to follow ...
+proactive - paradigm - pragmatical
+We are at the same page, discuss what are the next steps
+it is gonna be fixed today, that the plan
+walk through
+I am happy t odo it, I might have a lot of questions to ask, want to be more familiar, take longer then
+            How can they involved / contribute / shared responsibility / cooperate
+My understanding / same understanding / don't get me wrong
+The information I get
+Started to discuss aligning activities (meeting structure, communication channels, repsonsibilities, tools)
+What is your timeline
+Getting your point, the key is
+We are on a good track / off track
+I am aware of that
+One approach / Best practice
+Plan organize activities
+To discuss what we have
+What is not clear 
+A pretty good state is reached
+if time permits
+from xy point of view it is pretty easy
+Up and running / rampng up / learning curve
+Can't procees without having
+Business logic behind
+there is a potential / alternatives
+deeply involved
+collaborate
+it is a big thing, we are on a same boat
+synchornize activities
+proven delepoing paradigm
+The thing is
+with pleasure / gratefuly / cherfuly
+Verify / double check / confirm
+
+come up with
+would not expect
+
+just a quick heads up
+do we have anything in mind?
+if I am right
+letg get back to work
+it is handy
+adress a problem
+get more sophisticated - get better
+Theoretically speaking
+What is the takeaway
+ARE YOU UP TO
+it is up to you
+let me set the context
+First I would like to spend 2 minutes to share my vision where we are, what is ahed and what would i expect to be discussed
+we have sg to discuss
+it is sg need to be spent a time on | we have sg to discuss | it would be great to be implemented
+makes me feel better / makes me wonder / makes me think
+it is a challenging place to visit
+coming to the end
+moving from to can we spent a few minutes with?
+Ended up
+pracitcally speaking
+paradigm change
+letj jump right into in
+collaborate - cooperate / coordinate / synchronize
+I am hearing you, I agree - can we do it in a way like
+it was come on handy, there was not shortage to ...
+just for context we are
+lets sync about that,
+Please reach out to the DANF team (e.g. in comment under this post) if you have concerns or need support to adapt to the new schema.
+We will keep you updated regarding the timeline.
+but this is just the foundation for this feature, we have to figure out how to give everyone the power without too much freedom that would result wild west in the DANF db
+let me check, do not have anything prepared
+at the end of a day we need to
+there is a growing amount of varieaty
+make this work
+we have sg to fix
+trying again may help
+I can tell when it wil be done it is a mystical error - what we experience - wjat we feel like - mybe we have to contact (support) not know how long it take
+today we want to dig deeper
+
+
+What we need to clarify - what do we except, if you can agree I would accept, if not let's discuss it with Gergely
+Good point, first I will test both in the Python console to see the difference, then we can decide which one to chosse if there is any difference in the result
+find out more
+have a suggetsions
+shall we invite
+why don't we
+make few suggetsions | we have some problem around
+I am calling
+could you
+can I get back to you later on today? i dont have anything prepared
+what seems to be the probelm
+Oh I must apologize
+when exactly can we expect that
+must be at the latest
+can I have a word with you | I am
+aprroximate timelinei
+what is your view on that
+we are doing our best
+doing
+having doing - in the past
+As you know, we have been working on the new perfume that we are launching in April and we are unsure about some of the packaging details. We have seen some of your creative work in the sales department and we think you have a very good eye for detail.
+Do you have some time before close of business this Friday to sit down with us and talk through some of our designs? We would truly appreciate your advice on this. It shouldn't take longer than two hours of your time and we would be happy to clear it with Patricia, your department head, if necessary.
+apart from that
+other than that
+or the other way around
+you put is nicely
+proof of concept
+battletested
+it is rather easy in
+Transition Words and Phrases
+.
+The reason I am asking
+
+queue, slots
+state of the art
+one size fits all
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+To indicate more information:
+Besides
+Furthermore
+In addition
+Indeed
+In fact
+Moreover
+Second...Third..., etc.
+To indicate an example:
+For example
+For instance
+In particular
+Particularly
+Specifically
+To demonstrate
+To illustrate
+To indicate a cause or reason:
+As
+Because
+Because of
+Due to
+For
+For the reason that
+Since
+To indicate a result or an effect:
+Accordingly
+Finally
+Consequently
+Hence
+So
+Therefore
+Thus
+To indicate a purpose or reason why:
+For fear that
+In the hope that
+In order to
+So
+So that
+With this in mind
+To compare or contrast:
+Although
+However
+In comparison
+In contrast
+Likewise
+Nevertheless
+On the other hand
+Similarly
+Whereas
+Yet
+To indicate a particular time frame or a shift from one time period to another:
+After
+Before
+Currently
+During
+Eventually
+Finally
+First, . . . Second, . . ., etc.
+Formerly
+Immediately
+Initially
+Lastly
+Later
+Meanwhile
+Next
+Previously
+Simultaneously
+Soon
+Subsequently
+To summarize:
+Briefly
+In brief
+Overall
+Summing up
+To put it briefly
+To sum up
+To summarize
+To conclude:
+Given these facts
+Hence
+In conclusion
+So
+Therefore
+Thus
+To conclude
+
+structured approach to tackling coding challenges. Keep
+in mind that the specific implementation details will depend on the problem
+why they might be preferred in this context.
+
+Q&A
+What?
+(what do you mean? sorry I don’t get it)
+Is it fair? First time you have heard…
+Why?
+(why is it relevant?)
+HAVE Suppose/semms like/might/as far as I know/ my understanding/ me feeling | What we know/have/did (certainty)
+NOT HAVE The Question/Problem is | not considered (not sure)
+Next Steps (what I would recommend, what is missing, it need to be checked, integrating would be great as next step)
+Describe
+What is the situation?
+integrating is not easy – the point
+What progress we made, init assumption, summary, state of our work, ehat we have found-difficulties faced
+Poped ups
+Choices we had, which ine is chosen and why (multiple on the table?)
+Where we are now, reasons
+Conclusion
+Questionable parts/concerns
+Why?
+reasons
+based on, according to
+Feelings?
+it was like
+my impressions
+Logical or Time LINE
+Conclusion
+Communicate slowly - share thoughts/steps no matter how silly - easier to follow / if any question come to mind ask inmediately
+Be cool and calm - be fully present
+No excuse , be confident no akward - nobody judge, be honest, share thoughts and details come to mind, do not stress, do not hurry
+Describe the situation (what, based on what, why)
+Have - Dont Have
+Do not rush - wont be judged | be honest
+Be Transparent - open minded
+it requires lot of experimenting
+it is not trivial, I spent 4-5 hours, could not solve it last time
+Have a problem to solve (2 ige kozt targy)
+Help integrating it (2 ige, egymasra vonatkoznak)
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Can you tell me where is the bathroom? Do you have any idea...?
+is there any chance to have...? Would it be possible to have...?
+also you spent some ime with understanding it, did you manage to come to an understanding of the component?
+Good reflexes are required to play hockey | An interview is scheduled for Monday,
+Invetigating is necessary | It is easy to investigate | I wanted to help integrating our software yesterday (2 ige)
+We have a problem to discuss (2 ige közé tárgy)
+I am about to start.
+What we know / have / did / we can do
+Our plan / idea / intetntion / focus was to
+The question / problem / main point / reason / goal is to
+don't want to spent to much time - it is out of scope of the daily
+involve sb with more permission and experience
+I am up to share my pain
+It is considered as the best pizzeria |  It is know as
+Let me share / know / check / share / suppose
+I will let you know/i will inform you
+I am not sure / seem like / looks like / sounds like / I suppose / My assumption is / I guess / As far as I know / Might have not been concerned yet / Probably / my understanding / good question
+It would make sense / would be nice / great / useful / suggest (my recommendation is to)
+based on / according to / reportedly / claimed
+Am i supposed to
+There is / There are
+In which, by which, what, containing, including the edfort of the young generation
+The products are tested by factory workers / Territory is controled by AlShabab
+Our facilites were renovated last month.
+Gift will be exchanged.
+New books are being used in classrooms.
+Safety regulations were being ignored by the manager.
+The last piece of cake has been eaten.
+I discovered that my brilliant idea had been copied.
+The new furniture will have been delivered by Friday.
+It is a piece of cake
+Used to live in countryside, but I have been living in a city for 10 years.
+I was playing football yesterday, all day.
+When it comes to productivity / Talking of / As for
+At the end of a day / With this in mind / given these fact / makes me wonder / makes that work
+The size can be adjusted.
+The error should have been corrected.
+NEED
+need to be created
+POSSIBILTY
+This recipe can be made with butter
+That was very dangerous you could have been killed
+3 us citizens may have been involved in the attack
+INPOSSIBILITY
+Crops can not be grown here, because the soil is too rocky
+The work could not have been finished that day it was at least a week work
+I have my car repaired.
+I have made my brother repair my car (get&have - sima műveltető, make - rávenni)
+What would be great to be implemented
+It has inspired many people myself include
+mention / say/put it/ point out
+keep in mind, keep eye on it/ keep in touch / keep me informed
+proposal to break up
+on a monthly basis
+wich would make sense to remove (2 cselekvés)
+sounds familiar - I am aware of
+mention - point out - notice
+To such dangerous places
+Tend to eliminate it
+I think it is fair to say
+There is a car manufacturer which is not profitable In particular
+At a glence seems ok, but it is my first impression let me take a closer look, give me few days to check the details
+Regarding
+Regardles
+ramp up
+has the potential
+good direction
+being on a right track
+collaborate
+cooperate
+represents - stands for
+imterpreted - i understand that as
+tiping the toe - not an expertR
+stepping stone
+tip of the sword
+
+just caching up where I left
+
+
+lets go for it / choose
+lets see
+oh my godness
+it is not easy to decide wether it
+deal with small
+we also covered - we are going
+I am willing to explore alternative ways together
+look forward to the opportunity to discuss my performance and potential for a pay raise. Please let me know your availability, and we can schedule a meeting that works best for you.
+
+Thank you for your time and consideration.
+
+He was kind enough to let me
+juts to give a sense -
+her attitude was as follow - Okay, I can
+Then
+He was like/ He said - Hey John is it your first day here?
+
+out of courisoity / to get a better undesrtanding
+I managed to = was able to somehow
+staretd to play around
+how did you two came across?
+put it together
+
+Here you go
+Let me
+
+follow up questions
+
+
+collect info
+
+Here you go
+Let me
+follow up questions
+collect info
+feedbacks
+offer help
+contact info
+showig interest to people and the topic
+when to see you next time
+refering back
+
+
+make it through
+by chance
+out of couriusitiy
+repeat what your partner said...indeed
+remarkable
+shaking thinghs up a little and see what comes out
+How much is it going to cost
+hom long it is going to take
+
+
+ promotes a culture of continuous learning and improvement, allowing organizations and individuals to stay competitive and adapt to changing environments
+ Kaizen's principles have been widely adopted in various industries, including
+
+ catch up -
+ which is meant to extract
+ fostering -
+ empower - felhatalmaz
+ promote
+ encourage
+ utilize - leverage
+
+ I mean - I am refering to
+ I even histate to ask this
+ due to lack of nutrition
+
+ carried on
+ exploit
+ the soonest we could revisit this matter
+
+might resonate with your needs
+
+
+seems like there is a concencus
+dont want to be negative, strong feeling about it
+just recap everything
+I realized we have different views on something - come up with a plan how we move forward
+fine with me
+we made a really great progress
+speak you soon
+time is pressing
+consencus to ige
+concesnus on sg
+allocate member
+why there is such a thing
+
+represents - stands for
+
+imterpreted - i understand that as
+
+tiping the toe - not an expertR
+
+stepping stone
+
+tip of the sword
+
+
+
+just caching up where I left
+
+gives any value / give you an advantage
+
+
+
+under the hood (in the background)
+
+lets go for it / choose
+
+lets see
+
+oh my godness
+
+it is not easy to decide wether it
+
+we also covered - we are going
+
+I would gratefully explore alternative ways together
+
+look forward to the opportunity to discuss my performance and potential for a pay raise. Please let me know your availability, and we can schedule a meeting that works best for you.
+
+Thank you for your time and consideration.
+
+
+
+He was kind enough to let me
+
+juts to give a sense - insight
+
+her attitude was as follow - Okay, I can
+
+Then
+
+He was like/ He said - Hey John is it your first day here?
+
+
+
+out of courisoity / to get a better undesrtanding
+
+I managed to = was able to somehow
+
+staretd to play around
+
+how did you two came across?
+
+put it together
+
+Here you go
+
+Let me
+
+sometime even ... who knows why, I don't think we should focus to much on that right now
+
+if = wether if
+
+when to see you next time
+
+refering back
+
+legitim question
+
+decent palce to live
+
+
+
+make it through
+
+by chance
+
+out of couriusitiy
+
+repeat what your partner said...indeed
+
+remarkable
+
+shaking thinghs up a little and see what comes out
+
+catch up -
+
+which is meant to extract
+
+fostering -
+
+promote
+
+encourage
+
+I mean - I am refering to
+
+due to lack of nutrition
+
+it is for, it meant to be
+
+sequentle steps
+
+at least from my perspective
+
+the soonest we could revisit this matter
+
+might resonate with your needs
+
+seems like there is a concencus
+
+strong feeling about it
+
+just recap everything
+
+I realized we have different views on something - come up with a plan how we move forward
+
+fine with me
+
+we made a really great progress
+
+speak you soon
+
+time is pressing / time permits
+
+outline
+
+to shape
+
+you can ... when (it comes) to understanding the problem
+
+haven't adressed/covered that so far
+
+organization
+
+This can lead to
+
+in the fly
+
+it is like a living creature
+
+can not forese everything
+
+come to the decsision
+
+please let me know if you can see that
+
+some pending PR-s not has been morged, regarding
+
+having it own time
+
+multiple domains of life - aspects
+
+now lets have a look at what we call ...
+
+in a convincing manner
+
+legitim question
+
+adress an issue
+
+Adressing issues were not in scope
+
+revisit a matter
+
+remarkable
+
+make it trough
+
+moving on
+
+gain insight
+
+potential
+
+ambitious
+
+stepping stone | tipping the toe
+
+first impression
+
+make that work
+
+requires some experimenting, not
+
+makes me feel better
+
+the thing is
+
+proactive, pragmatical, assertiveley
+
+
+
+
+
+hot it will turn out, i will modify accordingly
+
+not as much progress as much I expected
+
+
+
+
+
+continous effort
+
+not muching else from my side regarding that
+
+that pretty much it from my side
+
+as a society if we want to make those steps more gradually
+
+walk me through your thoughts
