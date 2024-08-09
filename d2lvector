@@ -1,0 +1,244 @@
+import numpy as np
+arr = np.array([1, 2, 3])
+print(arr)  # Output: [1 2 3]
+zeros = np.zeros(5)
+print(zeros)  # Output: [0. 0. 0. 0. 0.]
+ones = np.ones(5)
+print(ones)  # Output: [1. 1. 1. 1. 1.]
+full = np.full(5, 7)
+print(full)  # Output: [7 7 7 7 7]
+range_arr = np.arange(0, 10, 2)
+print(range_arr)  # Output: [0 2 4 6 8]
+arr = np.array([1, 2, 3, 4, 5, 6])
+reshaped_arr = arr.reshape(2, 3)
+print(reshaped_arr)
+# Output:
+# [[1 2 3]
+#  [4 5 6]]
+arr = np.array([1, 2, 3])
+print(np.sum(arr))  # Output: 6
+arr = np.array([1, 2, 3, 4, 5])
+print(np.mean(arr))  # Output: 3.0
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+print(np.dot(arr1, arr2))  # Output: 32
+arr1 = np.array([[1, 2, 3], [4, 5, 6]])
+arr2 = np.array([[7, 8, 9], [10, 11, 12]])
+# Concatenate along the first dimension (vertically)
+print(np.concatenate((arr1, arr2), axis=0))
+# Output:
+# [[ 1  2  3]
+#  [ 4  5  6]
+#  [ 7  8  9]
+#  [10 11 12]]
+# Concatenate along the second dimension (horizontally)
+print(np.concatenate((arr1, arr2), axis=1))
+# Output:
+# [[ 1  2  3  7  8  9]
+#  [ 4  5  6 10 11 12]]
+arr = np.array([1, 2, 3, 4, 5])
+print(np.min(arr))  # Output: 1
+arr = np.array([0, np.pi/2, np.pi])
+print(np.sin(arr))  # Output: [0. 1. 0.]
+
+
+# Define two 2D arrays (matrices)
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+# Perform matrix multiplication
+C = np.matmul(A, B)
+print(C)
+# Output:
+# [[19 22]
+#  [43 50]]
+C = A @ B
+print(C)
+# Output:
+# [[19 22]
+#  [43 50]]
+
+import numpy as np
+arr = np.array([1, 2, 3])
+print(arr)  # Output: [1 2 3]
+zeros = np.zeros(5)
+print(zeros)  # Output: [0. 0. 0. 0. 0.]
+ones = np.ones(5)
+print(ones)  # Output: [1. 1. 1. 1. 1.]
+full = np.full(5, 7)
+print(full)  # Output: [7 7 7 7 7]
+range_arr = np.arange(0, 10, 2)
+print(range_arr)  # Output: [0 2 4 6 8]
+arr = np.array([1, 2, 3, 4, 5, 6])
+reshaped_arr = arr.reshape(2, 3)
+print(reshaped_arr)
+# Output:
+# [[1 2 3]
+#  [4 5 6]]
+arr = np.array([1, 2, 3])
+print(np.sum(arr))  # Output: 6
+arr = np.array([1, 2, 3, 4, 5])
+print(np.mean(arr))  # Output: 3.0
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+print(np.dot(arr1, arr2))  # Output: 32
+arr1 = np.array([[1, 2, 3], [4, 5, 6]])
+arr2 = np.array([[7, 8, 9], [10, 11, 12]])
+# Concatenate along the first dimension (vertically)
+print(np.concatenate((arr1, arr2), axis=0))
+# Output:
+# [[ 1  2  3]
+#  [ 4  5  6]
+#  [ 7  8  9]
+#  [10 11 12]]
+# Concatenate along the second dimension (horizontally)
+print(np.concatenate((arr1, arr2), axis=1))
+# Output:
+# [[ 1  2  3  7  8  9]
+#  [ 4  5  6 10 11 12]]
+arr = np.array([1, 2, 3, 4, 5])
+print(np.min(arr))  # Output: 1
+arr = np.array([0, np.pi/2, np.pi])
+print(np.sin(arr))  # Output: [0. 1. 0.]
+
+
+# Define two 2D arrays (matrices)
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+# Perform matrix multiplication
+C = np.matmul(A, B)
+print(C)
+# Output:
+# [[19 22]
+#  [43 50]]
+C = A @ B
+print(C)
+# Output:
+# [[19 22]
+#  [43 50]]
+import numpy as np
+arr = np.array([1, 2, 3])
+print(arr)  # Output: [1 2 3]
+zeros = np.zeros(5)
+print(zeros)  # Output: [0. 0. 0. 0. 0.]
+ones = np.ones(5)
+print(ones)  # Output: [1. 1. 1. 1. 1.]
+full = np.full(5, 7)
+print(full)  # Output: [7 7 7 7 7]
+range_arr = np.arange(0, 10, 2)
+print(range_arr)  # Output: [0 2 4 6 8]
+arr = np.array([1, 2, 3, 4, 5, 6])
+reshaped_arr = arr.reshape(2, 3)
+print(reshaped_arr)
+# Output:
+# [[1 2 3]
+#  [4 5 6]]
+arr = np.array([1, 2, 3])
+print(np.sum(arr))  # Output: 6
+arr = np.array([1, 2, 3, 4, 5])
+print(np.mean(arr))  # Output: 3.0
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+print(np.dot(arr1, arr2))  # Output: 32
+arr1 = np.array([[1, 2, 3], [4, 5, 6]])
+arr2 = np.array([[7, 8, 9], [10, 11, 12]])
+# Concatenate along the first dimension (vertically)
+print(np.concatenate((arr1, arr2), axis=0))
+# Output:
+# [[ 1  2  3]
+#  [ 4  5  6]
+#  [ 7  8  9]
+#  [10 11 12]]
+# Concatenate along the second dimension (horizontally)
+print(np.concatenate((arr1, arr2), axis=1))
+# Output:
+# [[ 1  2  3  7  8  9]
+#  [ 4  5  6 10 11 12]]
+arr = np.array([1, 2, 3, 4, 5])
+print(np.min(arr))  # Output: 1
+arr = np.array([0, np.pi/2, np.pi])
+print(np.sin(arr))  # Output: [0. 1. 0.]
+
+
+# Define two 2D arrays (matrices)
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+# Perform matrix multiplication
+C = np.matmul(A, B)
+print(C)
+# Output:
+# [[19 22]
+#  [43 50]]
+C = A @ B
+print(C)
+# Output:
+# [[19 22]
+#  [43 50]]
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([1, 2, 3])
+print(np.array_equal(arr1, arr2))  # Output: True
+arr = np.array([1, 2, 3])
+arr = np.append(arr, [4, 5, 6])  # Add elements
+print(arr)  # Output: [1 2 3 4 5 6]
+# Insert value 7 at position 1
+arr = np.insert(arr, 1, 7)
+print(arr)  # Output: [1 7 2 3 4 5 6]
+arr = np.delete(arr, 1)  # Remove element at index 1
+print(arr)  # Output: [1 3 4 5 6]
+arr = np.array([1, 2, 3, 4, 5, 6])
+newarr = np.array_split(arr, 3)
+print(newarr)  # Output: [array([1, 2]), array([3, 4]), array([5, 6])]
+arr = np.array([1, 2, 3, 4, 5, 6])
+print(arr.shape)  # Output: (6,)
+print(arr.size)  # Output: 6
+print(arr.dtype)  # Output: int64
+
+
+
+import torch
+x = torch.arange(12, dtype=torch.float32)
+y = torch.zeros((2, 3))
+z = torch.ones((2, 3, 4))
+w = torch.randn(3, 4)
+o = torch.tensor([[2, 1, 4, 3], [1, 2, 3, 4], [4, 3, 2, 1]])
+x, y, z, w, o
+# SIZE OF TENSOR OBJECTS
+x.numel(), y.numel(), z.numel(), x.shape, y.shape, z.shape
+# RESAHPING TENSOR OBJECTS
+X = x.reshape(3, 4)
+X
+# INDEXING AND SLICING
+X[2, 2] = 17
+X[:2, :] = 12
+X,X[-1], X[1:3]
+# ELEMENT WISE OPERATIONS
+x = torch.tensor([1.0, 2, 4, 8])
+y = torch.tensor([2, 2, 2, 2])
+x + y, x - y, x * y, x / y, x ** y
+# tuple of Tensor objects are given back
+#CONCATIN TENSORS
+X = torch.arange(12, dtype=torch.float32).reshape((3,4))
+Y = torch.tensor([[2.0, 1, 4, 3], [1, 2, 3, 4], [4, 3, 2, 1]])
+X,Y,torch.cat((X, Y), dim=0), torch.cat((X, Y), dim=1), X==Y
+#BROADCASTING
+a = torch.arange(3).reshape((3, 1))
+b = torch.arange(2).reshape((1, 2))
+a, b, a + b
+# MEMORY REUSING Y = X + Y 
+# Python first evaluates Y + X, allocating new memory for the result and then points Y to this new location in memory.
+# we do not want to run around allocating memory unnecessarily all the time. In machine learning, we often have hundreds 
+# of megabytes of parameters and update all of them multiple times per second. Whenever possible, we want to perform these 
+# updates in place.
+Z = torch.zeros_like(Y)
+print('id(Z):', id(Z))
+Z[:] = X + Y
+print('id(Z):', id(Z))
+
+# TYPE CONVERSION
+import torch
+X = torch.randn(1,2)
+A = X.numpy()
+B = torch.from_numpy(A)
+a = torch.tensor([3.5,2])
+items = [item.item() for item in a]
+type(A), type(B), a, items, type(items[0]), float(a[1]), int(a[1])
+
