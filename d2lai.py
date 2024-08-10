@@ -713,6 +713,38 @@ trainer.fit(model, data)
 
 
 
+'''Alongside giant datasets and powerful hardware, great software tools have played an indispensable role in the rapid progress of deep learning. Starting with the pathbreaking Theano library released in 2007, flexible open-source tools have enabled researchers to rapidly prototype models, avoiding repetitive work when recycling standard components while still maintaining the ability to make low-level modifications. Over time, deep learning’s libraries have evolved to offer increasingly coarse abstractions. Just as semiconductor designers went from specifying transistors to logical circuits to writing code, neural networks researchers have moved from thinking about the behavior of individual artificial neurons to conceiving of networks in terms of whole layers, and now often design architectures with far coarser blocks in mind.
+
+To implement these complex networks, we introduce the concept of a neural network module. A module could describe a single layer, a component consisting of multiple layers, or the entire model itself! One benefit of working with the module abstraction is that they can be combined into larger artifacts, often recursively.'''
+
+import torch
+from torch import nn
+from torch.nn import functional as F
+
+net = nn.Sequential(nn.LazyLinear(256), nn.ReLU(), nn.LazyLinear(10))
+X = torch.rand(2, 20)
+net(X).shape
+
+
+
+class MLP(nn.Module):
+    def __init__(self):
+        # Call the constructor of the parent class nn.Module to perform
+        # the necessary initialization
+		# Note that it takes X as input, calculates the hidden representation with the activation function applied, and outputs its logits. In this MLP implementation, both layers are instance variables
+		
+        super().__init__()
+        self.hidden = nn.LazyLinear(256)
+        self.out = nn.LazyLinear(10)
+# Define the forward propagation of the model, that is, how to return the
+    # required model output based on the input X
+    def forward(self, X):
+        return self.out(F.relu(self.hidden(X)))
+
+
+
+
+
     
 
 
