@@ -130,7 +130,7 @@ class Trainer(d2l.HyperParameters):  #@save
     As before, we will defer the implementation of this method to later chapters'''
     def __init__(self, max_epochs, num_gpus=0, gradient_clip_val=0):
         self.save_hyperparameters()
-        assert num_gpus == 0, 'No GPU support yet'
+        self.gpus = [d2l.gpu(i) for i in range(min(num_gpus, d2l.num_gpus()))]
     def prepare_data(self, data):
         self.train_dataloader = data.train_dataloader()
         self.val_dataloader = data.val_dataloader()
@@ -140,6 +140,8 @@ class Trainer(d2l.HyperParameters):  #@save
     def prepare_model(self, model):
         model.trainer = self
         model.board.xlim = [0, self.max_epochs]
+        if self.gpus:
+            model.to(self.gpus[0])
         self.model = model
     def fit(self, model, data):
         self.prepare_data(data)
@@ -153,6 +155,9 @@ class Trainer(d2l.HyperParameters):  #@save
     def fit_epoch(self):
         raise NotImplementedError
     def prepare_batch(self, batch):
+        def prepare_batch(self, batch):
+        if self.gpus:
+            batch = [a.to(self.gpus[0]) for a in batch]
         return batch
     def fit_epoch(self):
         self.model.train()
@@ -172,6 +177,7 @@ class Trainer(d2l.HyperParameters):  #@save
             with torch.no_grad():
                 self.model.validation_step(self.prepare_batch(batch))
             self.val_batch_idx += 1      
+
 
 
 
@@ -741,6 +747,221 @@ class MLP(nn.Module):
     def forward(self, X):
         return self.out(F.relu(self.hidden(X)))
 
+
+'''To implement these complex networks, we introduce the concept of a neural network module. 
+A module could describe a single layer, a component consisting of multiple layers, or
+the entire model itself! One benefit of working with the module abstraction is that they can be combined into larger artifacts, often recursively.
+module is represented by a class. Any subclass of it must define a forward propagation method that transforms
+its input into output and must store any necessary parameters. Note that some modules do not require any parameters 
+at all. Finally a module must possess a backpropagation method, for purposes of calculating gradients. '''
+class MLP(nn.Module):
+    def __init__(self):
+        '''Note that it takes X as input, calculates the hidden 
+        representation with the activation function applied,
+        and outputs its logits. In this MLP implementation, 
+        both layers are instance variables. To see why this is reasonable, 
+        imagine instantiating two MLPs, net1 and net2, and training
+        them on different data. Naturally, we would expect them 
+        to represent two different learned models.
+        '''
+        # Call the constructor of the parent class nn.Module to perform
+        # the necessary initialization
+        super().__init__()
+        self.hidden = nn.LazyLinear(256)
+        self.out = nn.LazyLinear(10)
+    # Define the forward propagation of the model, that is, how to return the
+    # required model output based on the input X
+    def forward(self, X):
+        return self.out(F.relu(self.hidden(X)))
+    
+import torch
+from torch import nn
+from torch.nn import functional as F
+'''In short, nn.Sequential defines a special kind of Module,
+the class that presents a module in PyTorch. It maintains
+an ordered list of constituent Modules. Note that each of
+the two fully connected layers is an instance of the Linear
+class which is itself a subclass of Module. The forward propagation
+(forward) method is also remarkably simple: it chains each module
+in the list together, passing the output of each as input to the
+next. Note that until now, we have been invoking our models via 
+the construction net(X) to obtain their outputs
+LazyLinear - Pythorch function for layer, input features number is coming from the batch it gets, the output is passed as a param'''
+net = nn.Sequential(nn.LazyLinear(256), nn.ReLU(), nn.LazyLinear(10))
+X = torch.rand(2, 20)
+net(X).shape
+    
+    
+class MySequential(nn.Module):
+    '''Designed to daisy-chain other modules together. To build our own simplified MySequential, we just need to define two key methods:
+    A method for appending modules one by one to a list.
+    A forward propagation method for passing an input through the chain of modules, in the same order as they were appended.'''
+    def __init__(self, *args):
+        super().__init__()
+        for idx, module in enumerate(args):
+            self.add_module(str(idx), module)
+    def forward(self, X):
+        for module in self.children():
+            X = module(X)
+        return X
+    
+net = MySequential(nn.LazyLinear(256), nn.ReLU(), nn.LazyLinear(10))
+net(X).shape
+net[2].state_dict() # 2-es model, parameterei (bias and weights)
+type(net[2].bias), net[2].bias.data # 2-es model, bias
+[(name, param.shape) for name, param in net.named_parameters()] # all parameters at once
+
+class FixedHiddenMLP(nn.Module):
+    '''In this model, we implement a hidden layer whose weights (self.rand_weight)
+    are initialized randomly at instantiation and are thereafter constant. 
+    This weight is not a model parameter and thus it is never updated by
+    backpropagation. The network then passes the output of this “fixed” layer through a fully connected layer.  
+    Note that before returning the output, our model did something unusual.
+    We ran a while-loop, testing on the condition its  norm is larger than ,
+    and dividing our output vector by  until it satisfied the condition. 
+    Finally, we returned the sum of the entries in X. To our knowledge, 
+    no standard neural network performs this operation. Note that this 
+    particular operation may not be useful in any real-world task.
+    Our point is only to show you how to integrate arbitrary code 
+    into the flow of your neural network computations.
+    '''
+    
+    def __init__(self):
+        super().__init__()
+        # Random weight parameters that will not compute gradients and
+        # therefore keep constant during training
+        self.rand_weight = torch.rand((20, 20))
+        self.linear = nn.LazyLinear(20)
+    def forward(self, X):
+        X = self.linear(X)
+        X = F.relu(X @ self.rand_weight + 1)
+        # Reuse the fully connected layer. This is equivalent to sharing
+        # parameters with two fully connected layers
+        X = self.linear(X)
+        # Control flow
+        while X.abs().sum() > 1:
+            X /= 2
+        return X.sum()
+    
+'''We can mix and match various ways of assembling modules together. In the following example, we nest modules in some creative ways.'''
+class NestMLP(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.net = nn.Sequential(nn.LazyLinear(64), nn.ReLU(),
+                                 nn.LazyLinear(32), nn.ReLU())
+        self.linear = nn.LazyLinear(16)
+    def forward(self, X):
+        return self.linear(self.net(X))
+chimera = nn.Sequential(NestMLP(), nn.LazyLinear(20), FixedHiddenMLP())
+chimera(X)
+
+'''Individual layers can be modules. Many layers can comprise a module. Many modules can comprise a module.
+ A module can contain code. Modules take care of lots of housekeeping, including parameter initialization and
+ backpropagation. Sequential concatenations of layers and modules are handled by the Sequential module.'''
+ 
+ 
+ 
+ '''We can initialize parameters using built-in and custom initializers.'''
+net = nn.Sequential(nn.LazyLinear(8), nn.ReLU(), nn.LazyLinear(1))
+X = torch.rand(size=(2, 4))
+net(X).shape
+ def init_normal(module):
+    if type(module) == nn.Linear:
+        nn.init.normal_(module.weight, mean=0, std=0.01)
+        nn.init.zeros_(module.bias)
+net.apply(init_normal)
+net[0].weight.data[0], net[0].bias.data[0]
+def init_xavier(module):
+    if type(module) == nn.Linear:
+        nn.init.xavier_uniform_(module.weight)
+def init_42(module):
+    if type(module) == nn.Linear:
+        nn.init.constant_(module.weight, 42)
+net[0].apply(init_xavier)
+net[2].apply(init_42)
+print(net[0].weight.data[0])
+print(net[2].weight.data)
+def my_init(module):
+    if type(module) == nn.Linear:
+        print("Init", *[(name, param.shape)
+                        for name, param in module.named_parameters()][0])
+        nn.init.uniform_(module.weight, -10, 10)
+        module.weight.data *= module.weight.data.abs() >= 5
+net.apply(my_init)
+net[0].weight[:2]
+
+
+
+# Torch save and load 
+x = torch.arange(4)
+torch.save(x, 'x-file')
+x2 = torch.load('x-file')
+x2
+# Model save and load 
+class MLP(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.hidden = nn.LazyLinear(256)
+        self.output = nn.LazyLinear(10)
+    def forward(self, x):
+        return self.output(F.relu(self.hidden(x)))
+net = MLP()
+X = torch.randn(size=(2, 20))
+Y = net(X)
+torch.save(net.state_dict(), 'mlp.params')
+clone = MLP()
+clone.load_state_dict(torch.load('mlp.params'))
+clone.eval()
+
+# GPU
+'''We can specify devices, such as CPUs and GPUs, 
+for storage and calculation. By default, tensors
+are created in the main memory and then the CPU is used for calculations.
+Be noted that the cpu device means all physical CPUs and memory. 
+This means that PyTorch’s calculations will try to use all CPU cores.
+However, a gpu device only represents one card and the corresponding memory'''
+def cpu():  #@save
+    """Get the CPU device."""
+    return torch.device('cpu')
+def gpu(i=0):  #@save
+    """Get a GPU device."""
+    return torch.device(f'cuda:{i}')
+def num_gpus():  #@save
+    """Get the number of available GPUs."""
+    return torch.cuda.device_count()
+def try_gpu(i=0):  #@save
+    """Return gpu(i) if exists, otherwise return cpu()."""
+    if num_gpus() >= i + 1:
+        return gpu(i)
+    return cpu()
+def try_all_gpus():  #@save
+    """Return all available GPUs, or [cpu(),] if no GPU exists."""
+    return [gpu(i) for i in range(num_gpus())]
+'''By default, tensors are created on the CPU. We can query the device where the tensor is located.'''
+x = torch.tensor([1, 2, 3])
+x.device
+'''It is important to note that whenever we want to operate on multiple terms, 
+they need to be on the same device. For instance, if we sum two tensors, 
+we need to make sure that both arguments live on the same device—otherwise
+the framework would not know where to store the result or even how to
+decide where to perform the computation.'''
+X = torch.ones(2, 3, device=try_gpu())
+X
+'''we can specify a storage device when creating a tensor. Next, we create the tensor variable X on the first gpu'''
+'''Copying to the same device , it is slow an bad practice, keep them on the same'''
+Z = X.cuda(1)
+print(X)
+print(Z)
+'''when we print tensors or convert tensors to the NumPy format, 
+if the data is not in the main memory, the framework will copy it
+to the main memory first, resulting in additional transmission overhead.
+Even worse, it is now subject to the dreaded global interpreter lock 
+that makes everything wait for Python to complete.'''
+
+net = nn.Sequential(nn.LazyLinear(1))
+net = net.to(device=try_gpu())
+net(X)
+net[0].weight.data.device
 
 
 
